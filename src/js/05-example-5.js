@@ -33,24 +33,16 @@ function printTimeFormat(time) {
   timerEl.textContent = `${days} d. ${hours} h. ${minutes} m. ${seconds} s.`;
 }
 
-
-stopBtn.addEventListener('click', stopInterval);
-
-function stopInterval() {
-  console.log('s-a oprit');
+stopBtn.addEventListener('click', () => {
   clearInterval(intervalId);
 
   stopBtn.disabled = true;
   continueBtn.disabled = false;
-}
+});
 
-
-continueBtn.addEventListener('click', coninueInterval);
-
-function coninueInterval() {
-  console.log('s-a repornit');
+continueBtn.addEventListener('click', () => {
   intervalId = setInterval(calculateTimeLeftToNY, 1000);
 
   stopBtn.disabled = false;
   continueBtn.disabled = true;
-}
+});
